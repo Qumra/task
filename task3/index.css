@@ -78,6 +78,9 @@ body {
     width: .84rem;
     height: .84rem;
 }
+.icons p {
+    margin-top: .2rem;
+}
 .icons .icon2 {
     float:right;
     margin-right: 1.1rem;
