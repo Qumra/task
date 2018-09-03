@@ -1,0 +1,152 @@
+/*清除样式*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,a,p,textarea{
+    margin: 0;
+    padding: 0;
+}
+
+ul,ol,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    display: block; 
+}
+
+img{
+    border: none;
+}
+/*css为clearfix，清除浮动*/
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.clearfix:after{clear:both;} 
+.clearfix{ 
+    *zoom:1;/*IE/7/6*/
+}
+
+html {
+    font-size: 625%;
+}
+@media only screen and (max-width: 768px){
+    html {
+        font-size: 625% !important;
+    }
+}
+@media only screen and (max-width: 425px){
+    html {
+        font-size: 415% !important;
+    }
+}
+@media only screen and (max-width: 375px){
+    html {
+        font-size: 366% !important;
+    }
+}
+@media only screen and (max-width: 320px){
+    html {
+        font-size: 312.5% !important;
+    }
+}
+/* 头部 */
+header {
+    padding: .2rem;
+    background-color: #29bde0;
+}
+header img {
+    width: .34rem;
+    height: 0.27rem;
+    display: block;
+}
+/* 内容 */
+.container {
+    background-color: #f0f0f0;
+    padding: .28rem .36rem .6rem .36rem;
+}
+.container .lastgame {
+    border: 1px solid #e1e5e7;
+    background-color: #fff;
+    line-height: 1.18rem;
+    text-align: center;
+    font-size: .35rem;
+    color: #9a9a9a;
+    position: relative;
+}
+.container .lastgame img {
+    width: 0.24rem;
+    height: 0.4rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -.2rem;
+    right: .15rem;
+}
+.container .content {
+    border: 1px solid #e1e5e7;
+    background-color: #fff;
+    margin-top: 0.25rem;
+}
+.container .content .title {
+    line-height: 0.9rem;
+    text-align: center;
+    color: #fbb435;
+    font-size: .38rem;
+    border-bottom: 2px solid #fbb435;
+}
+.container .content section {
+    /* padding: 0 .55rem; */
+    position: relative;
+}
+.container .content section .version1 {
+    margin-top: 0.3rem;
+    background-color: #29bde0;
+    /* color: #fff;
+    font-size: .32rem; */
+    line-height: 1.34rem;
+    text-align: center;
+    margin-right: .55rem;
+    margin-left: .55rem
+}
+.container .content section .version1 a {
+    color: #fff;
+    font-size: .32rem;
+}
+.container .content section .user {
+    line-height: 0.8rem;
+    text-align: center;
+}
+.container .content section .user span {
+    font-size: .25rem;
+    color: #787878;
+}
+.container .content section .pages {
+    width: 0;
+    height: 0;
+    border-top: .2rem solid transparent;
+    border-left: .3rem solid #fbb435;
+    border-bottom: .2rem solid transparent;
+    position: absolute;
+    right: 0.1rem;
+    top: 41%;
+}
+.container .content ol {
+    display: flex;
+    width: 1rem;
+    margin: 0 auto;
+    margin-bottom: .1rem;
+}
+.container .content ol li {
+    width: .16rem;
+    height: 0.16rem;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    margin-right: .1rem;
+}
+.container .content ol li.active {
+    background-color: #29bde0;
+}
