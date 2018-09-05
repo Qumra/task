@@ -161,6 +161,10 @@ footer .btns .btn1,footer .btns .btn2 {
 footer .btns .btn1 {
     background-color: #f66f6f;
 }
+footer .btns .btn1 a {
+    color: #fff;
+    font-size: .4rem;
+}
 footer .btns .btn2 {
     background-color: #fbb435;
 }
