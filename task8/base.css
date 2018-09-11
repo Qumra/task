@@ -29,8 +29,11 @@ h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:100%;}
 s,i,em{font-style:normal;text-decoration:none;}
 /* .col-red{color: #29b078!important;} */
 /*公共类*/
-.w {  /*版心 提取 */
-    width: 12rem;margin:0 auto;
+ /*版心 提取 */
+.w { 
+    min-width: 768px;
+    max-width: 1200px;
+    margin:0 auto;
 }
 .fl {
     float:left
@@ -52,21 +55,21 @@ s,i,em{font-style:normal;text-decoration:none;}
 }
 /* 媒体查询 */
 html {
-    font-size: 625%;
+    font-size: 8.3vw;
 }
-@media only screen and (min-width: 768px){
+@media screen and (max-width: 768px){
     html {
-        font-size: 250% !important;
+        font-size: 64px !important;
     }
 }
-@media only screen and (min-width: 992px){
+/* @media screen and (min-width: 992px){
     html {
-        font-size:323% !important;
+        font-size:82.6px !important;
     }
-}
+} */
 @media (min-width: 1200px){
     html {
-        font-size: 625% !important;
+        font-size: 100px !important;
     }
 }
 body  {
@@ -102,15 +105,16 @@ header nav {
     /* height: 1rem; */
 }
 header nav ul {
-    width: 12.6rem;
+    /* width: 12.6rem; */
     margin: 0 auto;
     display: flex;
     justify-content: flex-end;
 }
 header nav ul li {
-    width: 1.04rem;
+    /* width: 1.04rem; */
     text-align: center;
     border-bottom: 2px solid #29b078;
+    margin-left: .5rem;
     /* float: left;
     padding: 0 .35rem; */
 }

@@ -17,12 +17,17 @@
 }
 /* 内容部分 */
 .contain {
-    display: flex;
+    /* display: flex; */
+    margin-bottom:2.3rem;
 }
+/* 左边 */
 .contain .left {
     width: 305px;
     background-color: #fff;
     padding-bottom: 0.4rem;
+    box-shadow:0px 0px 10px 0px rgba(202, 202, 202, 0.75);
+    border-radius: .05rem;
+    float: left;
 }
 .contain .left .tt {
     line-height: .65rem;
@@ -32,24 +37,52 @@
     font-weight: 600;
     border-bottom: 1px solid #e6e6e6;
 }
-.contain .left .td {
-    /* display: flex;
-   flex-direction: column;
-   justify-content: center; */
-}
 .contain .left .td .box {
-    text-align: center;
+    margin-top: 0.4rem;
 }
 .contain .left .td .box li {
-    display: flex;
     color: #29b078;
    font-size: .14rem;
-   margin: 0.4rem;
-   background: url(images/d2.png) no-repeat 0 50%;
-    padding-left: .2rem;
+  background: url(images/d2.png) no-repeat 36% 50%;
+    padding-left: 40%;
 }
+.contain .left .td .box li:hover {
+    background: url(images/d1.png) no-repeat 35% 50%;
+    color: #ff650e;
+}
+/* .contain .left .td .box li img {
+    width: .11rem;
+    height: .13rem;
+    margin-right: .1rem;
+    margin-top: -.03rem;
+} */
+/* 右边 */
 .contain .right {
-    flex: 1;
-    margin-left: .23rem;
+    /* flex: 1; */
+    margin-left: 323px;
     background-color: #fff;
+    box-shadow:0px 0px 10px 0px rgba(202, 202, 202, 0.75);
+    border-radius: .05rem;
+}
+.contain .right .head {
+    border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    padding: .15rem .6rem;
+    align-items: center;
+}
+.contain .right .head img {
+    width: 1.34rem;
+    height: 1.2rem;
+}
+.contain .right .head p {
+    margin-left: 0.3rem;
+    font-size: .14rem;
+}
+.contain .right .content {
+    padding: .37rem .6rem .95rem;
+}
+.contain .right .content p {
+    font-size: .14rem;
+    margin-bottom: .45rem;
+    text-indent: .28rem;
 }
