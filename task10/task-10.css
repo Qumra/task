@@ -1,0 +1,109 @@
+
+/* 中部内容 */
+.main {
+    background-color: #fff;
+}
+.main .steps {
+    display: flex;
+    justify-content: flex-end;
+    padding: .4rem 0;
+}
+/* .main .steps .step {
+    position: relative;
+    left: 5px;
+} */
+.main .steps .step .top {
+    position: relative;
+}
+.main .steps .step .top .line {
+    width: 1.65rem;
+    height: .1rem;
+    background-color: #ccc;
+    /* border-radius: .05rem; */
+}
+.main .steps .step .top .circle {
+    color: #fff;
+    background-color: #ccc;
+    width: .2rem;
+    height: .2rem;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    top: -.05rem;
+    left: .75rem;
+    line-height: .2rem
+}
+.main .steps .step p {
+    font-size: .18rem;
+    margin-top: 0.25rem;
+}
+.main .steps .step:hover .top {
+    background-color: #ccc;
+}
+.main .steps .step:hover .top .line{
+    background-color: #ff7f02;
+    border-radius: .05rem;
+}
+.main .steps .step:hover .top .circle {
+    background-color: #ff7f02;
+}
+.main .steps .step:hover p {
+    color: #ff7f02;
+}
+.main .title {
+    color: #333;
+    font-size: .22rem;
+    font-weight: 600;
+    margin-bottom: .2rem;
+}
+.main .title span {
+    /* background-color: #1d7ad9; */
+    border-right: 4px solid #1d7ad9;
+    margin-right: 6px;
+}
+.main .select {
+    background-color: #f4f4f4;
+    color: #1d7ad9;
+    font-size: .18rem;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+}
+.main .select img {
+    width: .19rem;
+    height: .15rem;
+    margin: 0 .3rem 0 .15rem;
+}
+.main .items {
+    padding: .35rem 0;
+}
+.main .items .radio-inline {
+    margin-left: .45rem;
+}
+@media (max-width: 768px){
+    html {
+        font-size: 64px !important;
+    }
+    nav .nav1 li {
+        margin: 0 25%;
+    }
+     nav .nav1,.bottom .bott {
+        display: block;
+    }
+    .main .steps {
+        display: flex;
+        justify-content: center;
+    }
+    .main .steps .step .top .line {
+        /* width: 13%; */
+    }
+    .bottom .bott .b1 {
+        width: 100%;
+        margin-bottom: .2rem;
+    }
+    .bottom .bott .b2 {
+        width: 100%;
+    }
+    .bottom .bott .b3 {
+        width: 100%;
+    }
+}

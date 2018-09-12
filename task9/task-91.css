@@ -47,9 +47,9 @@
     height: 0.55rem;
 }
 .section1 .right {
-    padding-top: .67rem;
+    padding-top: .6rem;
     padding-left: .55rem;
-    height: 2.7rem;
+    /* height: 2.7rem; */
 }
 .section1 .right .content .num {
     margin-bottom: .28rem;
