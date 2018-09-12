@@ -75,9 +75,40 @@
 }
 .main .items {
     padding: .35rem 0;
+    border-bottom: 1px solid #e7e7e7;
 }
 .main .items .radio-inline {
     margin-left: .45rem;
+}
+.main .items .radio-inline input {
+    display: none;
+}
+.radioInput{
+    background-color:#fff;
+    border:2px solid rgba(0,0,0,0.15);
+    border-radius:100%;display:inline-block;
+    height:36px;
+    margin-right:10px;
+    margin-top:-1px;
+    vertical-align:middle;
+    width:36px;
+    line-height:1
+}
+.radio:checked + .radioInput:after{
+    background-color:#00A1E9;
+    border-radius:100%;
+    content:"";
+    display:inline-block;
+    height:26px;
+    margin-left:5px;
+    margin-top:5px;
+    width:26px
+}
+.checkbox.radioInput,.radio:checked + .checkbox.demo--radioInput:after{
+    border-radius:0
+}
+.radio:checked + .radioInput{
+    border:2px solid #00A1E9;
 }
 @media (max-width: 768px){
     html {
