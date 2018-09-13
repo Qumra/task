@@ -2,7 +2,9 @@
 /* 中部内容 */
 .main {
     background-color: #fff;
+    padding-bottom: .55rem;
 }
+/* 流程 */
 .main .steps {
     display: flex;
     justify-content: flex-end;
@@ -50,6 +52,7 @@
 .main .steps .step:hover p {
     color: #ff7f02;
 }
+/* 标题 */
 .main .title {
     color: #333;
     font-size: .22rem;
@@ -61,6 +64,7 @@
     border-right: 4px solid #1d7ad9;
     margin-right: 6px;
 }
+/* 选框 */
 .main .select {
     background-color: #f4f4f4;
     color: #1d7ad9;
@@ -68,33 +72,89 @@
     padding-top: 0.15rem;
     padding-bottom: 0.15rem;
 }
-.main .select img {
+.main .select .img1 {
     width: .19rem;
     height: .15rem;
     margin: 0 .3rem 0 .15rem;
 }
+.main .select .img2 {
+    width: .22rem;
+    height: .2rem;
+    margin: 0 .3rem 0 .15rem;
+}
+.main .select .img3 {
+    width: .15rem;
+    height: .2rem;
+    margin: 0 .3rem 0 .15rem;
+}
+.main .list {
+ /* position: relative; */
+ border-bottom: 1px solid #e7e7e7;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background-color: #fbfcff;
+}
 .main .items {
     padding: .35rem 0;
-    border-bottom: 1px solid #e7e7e7;
+    font-size: .18rem;
+    color: #333;
+    /* float: left; */
+}
+.main .items.cur {
+    padding: .55rem 0;
+}
+
+.main .list .dropdown {
+    /* position: absolute;
+    right: .2rem;
+    top: .3rem; */
+    margin-right: .2rem;
+}
+.dropdown .btn-default {
+    color: #999;
+    font-size: .18rem;
+}
+.dropdown .img img {
+    width: .24rem;
+    height: .28rem;
+}
+.btn-default:hover {
+    background-color: #fff;
+}
+.open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+    background-color: #fff;
+    outline: none;
+}
+.dropdown-menu {
+    min-width: 0;
+    max-width: 100%;
+    font-size: .14rem;
+}
+.dropdown-menu>li>a {
+    padding: 3px 5px;
+    white-space: normal;
 }
 .main .items .radio-inline {
     margin-left: .45rem;
+    margin-bottom: .2rem;
 }
-.main .items .radio-inline input {
+.main .items .radio1 {
     display: none;
 }
 .radioInput{
     background-color:#fff;
     border:2px solid rgba(0,0,0,0.15);
-    border-radius:100%;display:inline-block;
-    height:36px;
-    margin-right:10px;
+    border-radius:100%;
+    display:inline-block;
+    height:.2rem;
+    margin-right:.1rem;
     margin-top:-1px;
     vertical-align:middle;
-    width:36px;
+    width:.2rem;
     line-height:1
 }
-.radio:checked + .radioInput:after{
+/* .radio:checked + .radioInput:after{
     background-color:#00A1E9;
     border-radius:100%;
     content:"";
@@ -103,16 +163,46 @@
     margin-left:5px;
     margin-top:5px;
     width:26px
-}
-.checkbox.radioInput,.radio:checked + .checkbox.demo--radioInput:after{
+} */
+.checkbox.radioInput,.radio1:checked + .checkbox.radioInput:after{
     border-radius:0
 }
-.radio:checked + .radioInput{
-    border:2px solid #00A1E9;
+.radio1:checked + .radioInput{
+    border:.07rem solid #1d7ad9;
 }
-@media (max-width: 768px){
+.main .items .radio {
+    margin-bottom: .2rem;
+    margin-left: .45rem;
+    display: flex;
+}
+.main .items .radio .box{
+    margin-left: .6rem;
+}
+.main .items .radio input {
+    width: .7rem;
+    margin-left: 3px;
+    border: 1px solid #e8e8e8;
+    outline-style:none;
+}
+/* 下一步 */
+.next {
+    padding-top: 1.4rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e7e7e7;
+    text-align: center;
+}
+.next button {
+    padding: .1rem .5rem;
+    font-size: .24rem;
+}
+@media screen and  (max-width: 768px){
     html {
         font-size: 64px !important;
+    }
+    .w { 
+        max-width: 768px;
+        /* margin:0 auto; */
+        margin: 0 15px;
     }
     nav .nav1 li {
         margin: 0 25%;
@@ -124,8 +214,9 @@
         display: flex;
         justify-content: center;
     }
-    .main .steps .step .top .line {
-        /* width: 13%; */
+   
+    .main .select {
+        margin: 0 15px;
     }
     .bottom .bott .b1 {
         width: 100%;
@@ -136,5 +227,33 @@
     }
     .bottom .bott .b3 {
         width: 100%;
+    }
+}
+@media screen and (max-width: 425px){
+    /* html {
+        font-size: 35px !important;
+    } */
+    .main .steps .step .top .line {
+        width: 100%;
+    }
+    .main .steps .step .top .circle {
+    color: #fff;
+    background-color: #ccc;
+    width: .2rem;
+    height: .2rem;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    top: -.05rem;
+    left: .4rem;
+    line-height: 0.2rem;
+    }
+    .main .items .radio {
+        margin-bottom: .2rem;
+        margin-left: .45rem;
+        display: block;
+    }
+    .main .items .radio .box {
+        margin-bottom: .2rem;
     }
 }

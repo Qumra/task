@@ -1,11 +1,13 @@
 @charset "UTF-8";
 /*css 初始化 */
 html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
-fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+fieldset, img,button { border:none; padding:0;margin:0;outline-style:none; }
 ul, ol { list-style:none; }
-input { padding-top:0; padding-bottom:0; font-family: "微软雅黑";}
+/* input { padding-top:0; padding-bottom:0; 
+    font-family: "微软雅黑";} */
+    
 select, input { vertical-align:middle;}
-select, input, textarea { font-size:12px; margin:0; }
+select,textarea { font-size:12px; margin:0; }
 textarea { resize:none; } /*防止拖动*/
 img {border:0;	vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙*/
 table { border-collapse:collapse; }
@@ -29,7 +31,6 @@ s,i,em{font-style:normal;text-decoration:none;}
 /*公共类*/
  /*版心 提取 */
  .w { 
-    min-width: 320px;
     max-width: 1200px;
     margin:0 auto;
     /* padding: 0 15px; */
@@ -64,7 +65,7 @@ s,i,em{font-style:normal;text-decoration:none;}
 html {
     font-size: 8.3vw;/*100/1200*/
 }
-@media screen and (max-width: 320px){
+/* @media screen and (max-width: 320px){
     html {
         font-size: 27px !important;
     }
@@ -83,7 +84,7 @@ html {
     html {
         font-size: 64px !important;
     }
-}
+} */
 @media (min-width: 1200px){
     html {
         font-size: 100px !important;
