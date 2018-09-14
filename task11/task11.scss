@@ -1,0 +1,126 @@
+//计算rem基准字体
+$rem-base-font-size:100px;
+//UI设计图的分辨率宽度
+$UI-width:720px;
+// 需要适配的屏幕宽度
+$device-width:320px,375px,425px,768px;
+
+// 根据不同设备的屏幕宽度，定义<html>的基准font-size
+@mixin html-font-size {
+    @each $current-width in $device-width {
+        @media  only screen and (min-width:$current-width) {
+            html {
+                $x:$UI-width/$current-width; // // 计算出是几倍屏
+            font-size: $rem-base-font-size/$x!important;
+            }
+            
+        }
+    }
+}
+@include html-font-size();
+@function convertPxFormUI($px) {
+    @return $px/$rem-base-font-size*1rem;
+}
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family:"微软雅黑";} 
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0;	vertical-align:middle; }  /*  去掉图片底侧默认的3像素空白缝隙*/
+table { border-collapse:collapse; }
+html {
+    font-size:$rem-base-font-size;
+} 
+$main-color:#5fc0cd;
+body {
+    background-color: #eff0f4;
+
+    header {
+        display: flex;
+        width: 100%;
+        height: convertPxFormUI(88px);
+        line-height:convertPxFormUI(88px);
+        color: #fff;
+        background-color: $main-color;
+        position: relative;
+
+        .close {
+            font-size: convertPxFormUI(32px);
+            position: absolute;
+            left: convertPxFormUI(30px);
+        }
+        .login {
+            font-size: convertPxFormUI(36px);
+            position: absolute;
+            left: 50%;
+            margin-left:convertPxFormUI(-36px);
+        }
+        .sign {
+            font-size: convertPxFormUI(32px);
+            position: absolute;
+            right: convertPxFormUI(30px);
+        }
+
+    }
+    .tel,.password {
+        position: relative;
+        width: 100%;
+        height: convertPxFormUI(100px);
+        background-color: #fff;
+        margin-top:convertPxFormUI(16px);
+
+        input {
+            height:convertPxFormUI(54px);
+            border: none;
+            border-left: 2px solid #eff0f4;
+            padding-left: convertPxFormUI(35px);
+            margin-left: convertPxFormUI(115px);
+            font-size: convertPxFormUI(32px);
+            color: #999;
+            position: absolute;
+            top: 50%;
+            margin-top: convertPxFormUI(-29px);
+            outline: none;
+        }
+    }
+    .tel i {
+        background: url(../images/iphone.png) no-repeat;
+        width: convertPxFormUI(27px);
+        height: convertPxFormUI(43px);
+        background-size:100% 100%;
+        position:absolute;
+        top: 50%;
+        margin-top: convertPxFormUI(-21px);
+        margin-left: convertPxFormUI(40px);
+    }
+    .password i {
+        background: url(../images/locked2.png) no-repeat;
+        width: convertPxFormUI(29px);
+        height: convertPxFormUI(43px);
+        background-size:100% 100%;
+        position:absolute;
+        top: 50%;
+        margin-top: convertPxFormUI(-15px);
+        margin-left: convertPxFormUI(40px);
+    }
+    button {
+        width: 100%;
+        height: convertPxFormUI(100px);
+        color: #fff;
+        font-size: convertPxFormUI(36px);
+        background-color: #5fc0cd;
+        margin-top: convertPxFormUI(70px);
+        border: none;
+    }
+    a {
+        text-decoration: none;
+        color: $main-color;
+        font-size: convertPxFormUI(32px);
+        float: right;
+        margin-right: convertPxFormUI(30px);
+        margin-top: convertPxFormUI(20px);
+    }
+}
