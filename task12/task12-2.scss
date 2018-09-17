@@ -1,0 +1,258 @@
+//计算rem基准字体
+$rem-base-font-size:100px;
+//UI设计图的分辨率宽度
+$UI-width:720px;
+// 需要适配的屏幕宽度
+$device-width:320px,375px,425px,768px;
+
+// 根据不同设备的屏幕宽度，定义<html>的基准font-size
+@mixin html-font-size {
+    @each $current-width in $device-width {
+        @media  only screen and (min-width:$current-width) {
+            html {
+                $x:$UI-width/$current-width; // // 计算出是几倍屏
+            font-size: $rem-base-font-size/$x!important;
+            }
+            
+        }
+    }
+}
+@include html-font-size();
+@function convertPxFormUI($px) {
+    @return $px/$rem-base-font-size*1rem;
+}
+$main-color:#5fc0cd;
+
+.classBB {
+    border-bottom: 1px solid #e1e5e7;
+}
+@mixin btn-size2 {
+    height: convertPxFormUI(70px);
+    width: convertPxFormUI(145px);
+    border: none;
+    border-radius: convertPxFormUI(10px);
+    font-size: convertPxFormUI(34px);
+}
+@mixin indexAndme {
+    display: flex;
+    flex-direction: column;
+}
+@mixin th {
+    color: #999;
+    font-size: .28rem;
+    margin-left: .1rem;
+}
+@mixin fac {
+    display: flex;
+    align-items: center;
+}
+html {
+    font-size: 625%;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.br {
+    border-right: 1px solid #e1e5e7;
+}
+.bl {
+    border-right: 1px solid #e1e5e7;
+}
+.show{
+    display: block;;
+    transition: all 2s linear;
+    position: absolute;
+    z-index: 99;
+}
+.hide{
+    display: none;
+    transition: all 2s linear;
+
+} 
+/* 头部 */
+header {
+    height: convertPxFormUI(88px);
+    background-color: $main-color;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .btns {
+        display: flex;
+        justify-content: center;
+        padding-top: convertPxFormUI(10px);
+
+        .btn1{
+            @include btn-size2();
+            color: #fff;
+            background-color: #55a8b3;
+        }
+        .btn2 {
+            @include btn-size2();
+            color: $main-color;
+            background-color: #fff;
+            left: 50%;
+            margin-left: convertPxFormUI(-10px);
+            box-shadow: 1px 2px 2px 0px #999;
+        }
+    }
+
+    .position {
+        display: inline-block;
+        width: convertPxFormUI(42px);
+        height: convertPxFormUI(44px);
+        background-image: url(../images/position.png);
+        background-size: 100% 100%;
+        margin-right: convertPxFormUI(30px);
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: convertPxFormUI(-22px);
+    }
+}
+.list-head {
+    display: flex;
+
+    .meau {
+        width: 33.3%;
+       
+        color: #999; 
+        text-align: center;
+        .otitle {
+            padding: convertPxFormUI(10px) 0;
+            @extend .classBB;
+        .title {
+            font-size: convertPxFormUI(28px);
+            position: relative;
+
+            img {
+                width: convertPxFormUI(13px);
+                height:convertPxFormUI(8px);
+                position: absolute;
+                top: 50%;
+                right: 10%;
+            }
+        }
+        }
+        .dropdown {
+            @extend .classBB;
+            font-size: convertPxFormUI(22px);
+            width: 33.3%;
+            background-color: #fff;
+            box-shadow: 0 6px 12px rgba(0,0,0,.175);
+            list-style: none;
+             li {
+                padding: convertPxFormUI(5px) 0;
+             }
+        }
+    }        
+    
+}
+// 中部内容 
+.contain {
+    min-height: calc(100vh - 1.68rem);
+    .info {
+        padding:  convertPxFormUI(30px);
+        @extend .classBB;
+        .first{
+            @include fac();
+            margin-bottom:  convertPxFormUI(10px);
+            img {
+                width:  convertPxFormUI(24px);
+                height:  convertPxFormUI(24px);
+            }
+            span {
+                @include th;
+            }
+        }
+        .second {
+            margin-bottom:  convertPxFormUI(10px);
+            padding-left: convertPxFormUI(40px);
+            display: flex;
+            .during {
+                font-size:convertPxFormUI(28px);
+                color: #333;
+                white-space: nowrap;
+                flex: 1;
+            }    
+            .right {
+                @include fac();
+                .price {
+                    font-size:  convertPxFormUI(30px);
+                    color: #e63b0e;
+                    white-space: nowrap;
+                    margin-right:  convertPxFormUI(20px);
+                }
+                a {
+                    display: inline-flex;
+                    img {
+                        width:convertPxFormUI(19px);
+                        height:convertPxFormUI(33px);
+                    }
+                }
+            }
+        }
+        .third {
+            @include fac();
+            span {
+                @include th();
+            }
+            img {
+                width: convertPxFormUI(19px);
+                height: convertPxFormUI(23px);
+            }
+        }
+    }
+}
+
+
+/* 脚部 */
+
+.p {
+    // padding-top: 1.2rem;
+    // position: relative;
+    footer {
+        width: 100%;
+        background-color: #f8fafb;
+        font-size: .26rem;
+        color: #999;
+        position: fixed;
+        bottom: 0;
+
+        .main {
+            display: flex;
+            margin-left: convertPxFormUI(165px);
+            margin-right:convertPxFormUI(165px);
+            justify-content: space-between;
+            align-items: center;
+
+            .index{
+                @include indexAndme();
+                .home {
+                    display: inline-block;
+                    width: convertPxFormUI(46px);
+                    height: convertPxFormUI(40px);
+                    background-image: url(../images/home.png);
+                    background-size: 100% 100%;
+                }
+            }
+            .write {
+                width:convertPxFormUI(94px); 
+                height: convertPxFormUI(94px);
+                background-image: url(../images/Write.png);
+                background-size: 100% 100%;
+            }
+            .me {
+                @include indexAndme();
+                .m {
+                    display: inline-block;
+                    width: convertPxFormUI(42px);
+                    height: convertPxFormUI(41px);
+                    background-image: url(../images/me.png);
+                    background-size: 100% 100%;
+                }
+            }
+        }
+    }
+}

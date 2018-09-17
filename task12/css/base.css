@@ -1,0 +1,36 @@
+@media only screen and (min-width: 320px) {
+  html {
+    font-size: 44.44444px !important;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  html {
+    font-size: 52.08333px !important;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  html {
+    font-size: 59.02778px !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 106.66667px !important;
+  }
+}
+
+.classBB {
+  border-bottom: 1px solid #e1e5e7;
+}
+
+html {
+  font-size: 625%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}

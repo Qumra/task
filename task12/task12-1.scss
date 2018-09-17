@@ -1,0 +1,204 @@
+//计算rem基准字体
+$rem-base-font-size:100px;
+//UI设计图的分辨率宽度
+$UI-width:720px;
+// 需要适配的屏幕宽度
+$device-width:320px,375px,425px,768px;
+
+// 根据不同设备的屏幕宽度，定义<html>的基准font-size
+@mixin html-font-size {
+    @each $current-width in $device-width {
+        @media  only screen and (min-width:$current-width) {
+            html {
+                $x:$UI-width/$current-width; // // 计算出是几倍屏
+            font-size: $rem-base-font-size/$x!important;
+            }
+            
+        }
+    }
+}
+@include html-font-size();
+@function convertPxFormUI($px) {
+    @return $px/$rem-base-font-size*1rem;
+}
+@mixin left-title {
+    padding-right:convertPxFormUI(16px);
+    margin-left:convertPxFormUI(16px) ;
+    white-space: nowrap;
+}
+$main-color:#5fc0cd;
+
+.classBB {
+    border-bottom: 1px solid #e1e5e7;
+}
+@mixin btn-size {
+    width: 43%;
+    height:convertPxFormUI(88px);
+    border-radius: convertPxFormUI(10px);
+    font-size: convertPxFormUI(34px);
+}
+
+html {
+    font-size: 625%;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    height: convertPxFormUI(80px);
+    line-height:convertPxFormUI(80px);
+    background-color: $main-color;
+    color: #fff;
+    font-size: convertPxFormUI(36px);
+    text-align: center;
+    position: relative;
+
+    img {
+        width: convertPxFormUI(22px);
+        height: convertPxFormUI(37px);
+        position: absolute;
+        top: 50%;
+        margin-top: convertPxFormUI(-19px);
+        left:convertPxFormUI(30px);
+    }
+}
+ /* banner */
+.container {
+    min-height: calc(100vh - 1.96rem);
+
+    .banner {
+        width: 100%;
+        height: convertPxFormUI(235px);
+        background: url(../images/bg1.png) no-repeat;
+        background-size:cover;
+
+        .content {
+            display: flex;
+            align-items: center;
+            margin-left: convertPxFormUI(30px);
+            height: convertPxFormUI(235px);
+
+            img {
+                width: convertPxFormUI(170px);
+                height: convertPxFormUI(170px);
+            }
+            .txt {
+                margin-left: convertPxFormUI(100px);
+                color: #fff;
+                float: right;
+
+                .name {
+                    font-size:convertPxFormUI(36px);
+
+                    .age {
+                        margin-left:convertPxFormUI(10px);
+                        font-size: convertPxFormUI(24px);
+                    }
+                }
+                img {
+                    width: convertPxFormUI(18px);
+                    height:convertPxFormUI(23px);
+                    float: left;
+                    margin-top:convertPxFormUI(20px);
+                }
+                .address {
+                    font-size: convertPxFormUI(23px);
+                    line-height:convertPxFormUI(23px);
+                    float: right;
+                    margin-top: convertPxFormUI(20px);
+                    margin-left: convertPxFormUI(10px);
+                }
+            }
+        }
+    }
+
+    .skil,.info .box1,.year,.time,.price {
+        display: flex;
+        align-items: center;
+        height:convertPxFormUI(100px);
+       @extend .classBB;
+    }
+    .skil span {
+        font-size: convertPxFormUI(32px);
+        color: #333;
+        border-left: 2px solid $main-color;
+        margin-left: convertPxFormUI(30px);
+        padding-left: convertPxFormUI(25px);
+    }
+    .info {
+        padding-left: convertPxFormUI(30px);
+        font-size: convertPxFormUI(32px);
+        color: #333;
+
+        .h {
+            color: #999;
+        }
+        .red {
+            color: #e26163
+        }
+        .box1 {
+            i {
+                width:  convertPxFormUI(24px);
+                height: convertPxFormUI(24px);
+                background: url(../images/star.png) no-repeat;
+                background-size: 100% 100%;
+                margin-left:convertPxFormUI(16px) ;
+            }
+            .can {
+                margin-left:convertPxFormUI(10px);
+            }
+            .home {
+                @include  left-title();
+            }
+        }
+        .year .same,.time .same,.price .same,.introduce .same {
+            @include  left-title();
+        }
+        .xian {
+            display: inline-block;
+            border-right: 1px solid #e1e5e7;
+            height: convertPxFormUI(28px);
+            margin-right:convertPxFormUI(16px);
+        }
+
+        .introduce {
+            display: flex;
+            align-items: center;
+            height: auto;
+            @extend .classBB;
+
+            .jieshao {
+                font-size: convertPxFormUI(28px);
+                padding-top: convertPxFormUI(20px);
+                padding-bottom: convertPxFormUI(20px);
+                padding-right: convertPxFormUI(20px);
+            }
+        }
+    }
+}
+/* 脚部 */
+footer {
+    
+    .btns {
+        margin:  convertPxFormUI(20px) 0  convertPxFormUI(40px) 0;
+        display: flex;
+        justify-content: center;
+
+        .btn1 {
+            @include btn-size();
+            border: 1px solid $main-color;
+            background-color: #fff;
+            color: $main-color;
+            margin-right:  convertPxFormUI(25px);
+        }
+        .btn2 {
+            @include btn-size();
+            border: 1px solid #fff;
+            background-color: $main-color;
+            color: #fff;
+        }
+    }
+} 
+
+

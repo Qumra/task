@@ -1,0 +1,273 @@
+@charset "UTF-8";
+@media only screen and (min-width: 320px) {
+  html {
+    font-size: 44.44444px !important;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  html {
+    font-size: 52.08333px !important;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  html {
+    font-size: 59.02778px !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 106.66667px !important;
+  }
+}
+
+.classBB, .list-head .meau .otitle, .list-head .meau .dropdown, .contain .info {
+  border-bottom: 1px solid #e1e5e7;
+}
+
+html {
+  font-size: 625%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.br {
+  border-right: 1px solid #e1e5e7;
+}
+
+.bl {
+  border-right: 1px solid #e1e5e7;
+}
+
+.show {
+  display: block;
+  transition: all 2s linear;
+  position: absolute;
+  z-index: 99;
+}
+
+.hide {
+  display: none;
+  transition: all 2s linear;
+}
+
+/* 头部 */
+header {
+  height: 0.88rem;
+  background-color: #5fc0cd;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+header .btns {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.1rem;
+}
+
+header .btns .btn1 {
+  height: 0.7rem;
+  width: 1.45rem;
+  border: none;
+  border-radius: 0.1rem;
+  font-size: 0.34rem;
+  color: #fff;
+  background-color: #55a8b3;
+}
+
+header .btns .btn2 {
+  height: 0.7rem;
+  width: 1.45rem;
+  border: none;
+  border-radius: 0.1rem;
+  font-size: 0.34rem;
+  color: #5fc0cd;
+  background-color: #fff;
+  left: 50%;
+  margin-left: -0.1rem;
+  box-shadow: 1px 2px 2px 0px #999;
+}
+
+header .position {
+  display: inline-block;
+  width: 0.42rem;
+  height: 0.44rem;
+  background-image: url(../images/position.png);
+  background-size: 100% 100%;
+  margin-right: 0.3rem;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -0.22rem;
+}
+
+.list-head {
+  display: flex;
+}
+
+.list-head .meau {
+  width: 33.3%;
+  color: #999;
+  text-align: center;
+}
+
+.list-head .meau .otitle {
+  padding: 0.1rem 0;
+}
+
+.list-head .meau .otitle .title {
+  font-size: 0.28rem;
+  position: relative;
+}
+
+.list-head .meau .otitle .title img {
+  width: 0.13rem;
+  height: 0.08rem;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+}
+
+.list-head .meau .dropdown {
+  font-size: 0.22rem;
+  width: 33.3%;
+  background-color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  list-style: none;
+}
+
+.list-head .meau .dropdown li {
+  padding: 0.05rem 0;
+}
+
+.contain {
+  min-height: calc(100vh - 1.68rem);
+}
+
+.contain .info {
+  padding: 0.3rem;
+}
+
+.contain .info .first {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.1rem;
+}
+
+.contain .info .first img {
+  width: 0.24rem;
+  height: 0.24rem;
+}
+
+.contain .info .first span {
+  color: #999;
+  font-size: .28rem;
+  margin-left: .1rem;
+}
+
+.contain .info .second {
+  margin-bottom: 0.1rem;
+  padding-left: 0.4rem;
+  display: flex;
+}
+
+.contain .info .second .during {
+  font-size: 0.28rem;
+  color: #333;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.contain .info .second .right {
+  display: flex;
+  align-items: center;
+}
+
+.contain .info .second .right .price {
+  font-size: 0.3rem;
+  color: #e63b0e;
+  white-space: nowrap;
+  margin-right: 0.2rem;
+}
+
+.contain .info .second .right a {
+  display: inline-flex;
+}
+
+.contain .info .second .right a img {
+  width: 0.19rem;
+  height: 0.33rem;
+}
+
+.contain .info .third {
+  display: flex;
+  align-items: center;
+}
+
+.contain .info .third span {
+  color: #999;
+  font-size: .28rem;
+  margin-left: .1rem;
+}
+
+.contain .info .third img {
+  width: 0.19rem;
+  height: 0.23rem;
+}
+
+/* 脚部 */
+.p footer {
+  width: 100%;
+  background-color: #f8fafb;
+  font-size: .26rem;
+  color: #999;
+  position: fixed;
+  bottom: 0;
+}
+
+.p footer .main {
+  display: flex;
+  margin-left: 1.65rem;
+  margin-right: 1.65rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p footer .main .index {
+  display: flex;
+  flex-direction: column;
+}
+
+.p footer .main .index .home {
+  display: inline-block;
+  width: 0.46rem;
+  height: 0.4rem;
+  background-image: url(../images/home.png);
+  background-size: 100% 100%;
+}
+
+.p footer .main .write {
+  width: 0.94rem;
+  height: 0.94rem;
+  background-image: url(../images/Write.png);
+  background-size: 100% 100%;
+}
+
+.p footer .main .me {
+  display: flex;
+  flex-direction: column;
+}
+
+.p footer .main .me .m {
+  display: inline-block;
+  width: 0.42rem;
+  height: 0.41rem;
+  background-image: url(../images/me.png);
+  background-size: 100% 100%;
+}

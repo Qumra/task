@@ -66,10 +66,6 @@ img {
 }
 
 /*  去掉图片底侧默认的3像素空白缝隙*/
-table {
-  border-collapse: collapse;
-}
-
 html {
   font-size: 100px;
 }
